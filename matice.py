@@ -1,48 +1,72 @@
-import numpy as np
 
-# Definícia matice A
-A = np.array([[1, 2],
-              [3, 4]])
+import random
 
-# Definícia matice B
-B = np.array([[5, 6],
-              [7, 8]])
+def vytvor (j): 
+    policko=[]
 
-# Násobenie matíc A a B
-C = np.dot(A, B)
+    pole=[]
 
-# Výpis výslednej matice C
-print("Matica C:")
-print(C)
+    for n in range (j):
 
-def multiply_matrices(A, B):
-    rows_A = len(A)
-    cols_A = len(A[0])
-    rows_B = len(B)
-    cols_B = len(B[0])
+        for i in range (j): 
+            
+            policko.append(random.randrange (10))
 
-    if cols_A != rows_B:
-        raise ValueError("Počet stĺpcov matice A musí byť rovnaký ako počet riadkov matice B.")
+        pole.append(policko) 
+        policko = []
 
-    result = [[0 for _ in range(cols_B)] for _ in range(rows_A)]
+    return (pole)
 
-    for i in range(rows_A):
-        for j in range(cols_B):
-            for k in range(cols_A):
-                result[i][j] += A[i][k] * B[k][j]
+t=vytvor (3)
 
-    return result
+j=vytvor (3)
 
-# Definícia matíc A a B
-A = [[1, 2],
-     [3, 4]]
+def sucet_matic (matl, mat2):
 
-B = [[5, 6],
-     [7, 8]]
+    polisko = []
 
-# Násobenie matíc A a B
-C = multiply_matrices(A, B)
+    for x in range (len (matl)):
 
-# Výpis výslednej matice C
-for row in C:
-    print(row)
+        policenko=[]
+
+        for i in range (len (matl)): 
+            vysledok=t [x] [i]+j [x] [i]
+
+            policenko.append (vysledok) 
+        polisko.append(policenko)
+
+    return (polisko)
+
+def vypis (d):
+
+    for i in range (len (d)):
+
+        print (d[i])
+
+
+
+
+
+def zle_nasobenie (mat1, mat2):
+
+    polisko = [] 
+    for x in range (len (mat1)):
+        policenko=[]
+        for i in range (len (mat1)): 
+            vysledok=t[x] [i]*j[i] [x] 
+            policenko.append(vysledok)
+
+        polisko.append (policenko)
+
+    return (polisko)
+
+print ("matical:")
+
+vypis (t)
+
+print ("matica2:") 
+print ("súčet:") 
+vypis (sucet_matic (t, j))
+vypis (j)
+print ("ZLE")
+vypis (zle_nasobenie (t, j))
