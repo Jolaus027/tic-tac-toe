@@ -1,0 +1,15 @@
+pole = [5,7,1]
+sort = []
+b = ()
+
+count = 0
+for i in pole:
+    count += 1
+
+    sort.append(i)
+    pole.remove(i)
+    for f in sort:
+            
+        print("I",i)
+        print("F",f)
+                
